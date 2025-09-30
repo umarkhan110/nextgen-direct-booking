@@ -2,13 +2,11 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { 
   Users, 
-  Bath, 
-  Bed, 
+  Bath,  
   Gamepad2, 
   Mountain, 
   Wifi, 
   Car,
-  Snowflake,
   TreePine,
   UtensilsCrossed
 } from 'lucide-react';

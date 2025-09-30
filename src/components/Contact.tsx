@@ -23,7 +23,7 @@ const Contact = () => {
     // For now, just show a toast - will need backend integration
     toast({
       title: "Request Submitted",
-      description: "We'll confirm availability and send a secure invoice or direct you to Airbnb/VRBO.",
+      description: "We will confirm availability and send a secure invoice or direct you to Airbnb/VRBO.",
     });
   };
 
@@ -44,7 +44,7 @@ const Contact = () => {
               Contact & Booking Request
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Tell us about your trip. We'll confirm availability and send a secure invoice 
+              Tell us about your trip. We will confirm availability and send a secure invoice 
               or direct you to Airbnb/VRBO.
             </p>
           </div>

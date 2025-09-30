@@ -18,9 +18,10 @@ import {
   Shield,
   Loader2
 } from 'lucide-react';
-import { format, addDays, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, parseISO } from "date-fns";
-import { cn } from '@/lib/utils';
+// import { format, addDays, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, parseISO } from "date-fns";
+// import { cn } from '@/lib/utils';
 import CalendarView from './CalendarView';
+import Link from 'next/link';
 
 interface Booking {
   id: string;
@@ -174,12 +175,12 @@ const Admin = () => {
           </form>
 
           <div className="mt-6 text-center">
-            <a
+            <Link
               href="/"
               className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               ← Back to Main Site
-            </a>
+            </Link>
           </div>
         </Card>
       </div>
@@ -432,10 +433,10 @@ const Admin = () => {
                 Logout
               </Button>
               <Button variant="ghost" size="sm" asChild>
-                <a href="/">
+                <Link href="/">
                   <Home className="h-4 w-4 mr-2" />
                   View Site
-                </a>
+                </Link>
               </Button>
             </div>
           </div>

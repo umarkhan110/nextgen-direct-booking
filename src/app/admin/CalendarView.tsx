@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { format, addDays, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, parseISO } from "date-fns";
+import { format, addDays, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, parseISO } from "date-fns";
 import { useState } from "react";
 interface Booking {
     id: string;
@@ -138,7 +138,7 @@ const CalendarView = ({ bookings, setCalendarView }: { bookings: Booking[], setC
                                     {format(day, 'd')}
                                 </div>
 
-                                {dayBookings.slice(0, 2).map((booking, index) => (
+                                {dayBookings.slice(0, 2).map((booking) => (
                                     <div
                                         key={booking.id}
                                         className="text-xs p-1 mb-1 bg-white/60 rounded truncate"

@@ -18,7 +18,7 @@ const AdminRateManagement = () => {
   
   useEffect(() => {
     const fetchRates = async () => {
-      const { data, error } = await supabase
+      const { data } = await supabase
         .from('rates')
         .select('base_rate, cleaning_fee, tax_rate')
         .order('created_at', { ascending: false })

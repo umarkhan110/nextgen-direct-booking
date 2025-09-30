@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     }
     
     const icsContent = await response.text();
-    const events = parseICSContent(icsContent, platform);
+    const events = parseICSContent(icsContent);
     
     return NextResponse.json({ 
       success: true, 
@@ -40,7 +40,7 @@ const parseICSDate = (dateStr: string) => {
   );
 };
 
-function parseICSContent(icsContent: string, platform: string) {
+function parseICSContent(icsContent: string) {
   const events = [];
   const eventBlocks = icsContent.split('BEGIN:VEVENT');
   

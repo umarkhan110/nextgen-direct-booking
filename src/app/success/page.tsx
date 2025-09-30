@@ -24,7 +24,7 @@ export default function SuccessPage() {
         </h1>
         
         <p className="text-muted-foreground mb-6">
-          Thank you for your booking! You'll receive a confirmation email shortly with all the details.
+          Thank you for your booking! You will receive a confirmation email shortly with all the details.
         </p>
         
         {sessionId && (

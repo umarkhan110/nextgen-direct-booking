@@ -75,9 +75,9 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
   
   try {
     
-    const sessionWithLineItems = await stripe.checkout.sessions.retrieve(session.id, {
-      expand: ['line_items']
-    });
+    // const sessionWithLineItems = await stripe.checkout.sessions.retrieve(session.id, {
+    //   expand: ['line_items']
+    // });
 
     const customerEmail = session.customer_email || session.customer_details?.email;
     const amount = session.amount_total ? session.amount_total / 100 : 0;

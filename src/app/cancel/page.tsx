@@ -17,7 +17,7 @@ export default function CancelPage() {
         </h1>
         
         <p className="text-muted-foreground mb-6">
-          Your booking was cancelled. No payment was processed. You can try again whenever you're ready.
+          Your booking was cancelled. No payment was processed. You can try again whenever you are ready.
         </p>
         
         <div className="space-y-3">
