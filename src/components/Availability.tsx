@@ -169,11 +169,16 @@ const Availability = () => {
 
   const handleRequestToBook = async () => {
     setLoading(true);
-    if (!user) return setShowAuth(true);
+    if (!user) {
+      setLoading(false)
+      return setShowAuth(true);
+    }
     if (!checkIn || !checkOut) {
+      setLoading(false)
       return toast({ title: "Missing fields", description: "Select check-in and check-out." });
     }
     if (checkOut <= checkIn) {
+      setLoading(false)
       return toast({ title: "Invalid dates", description: "Check-out must be after check-in." });
     }
 
@@ -338,9 +343,9 @@ const Availability = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Calendar Section */}
           <div>
-              <Button variant="outline" size="sm" onClick={autoSync}>
-                  <CalendarSync /> Sync calendars
-                </Button>
+            <Button variant="outline" size="sm" onClick={autoSync}>
+              <CalendarSync /> Sync calendars
+            </Button>
             {/* <Card className="p-6 mb-6 bg-gradient-card">
               <h4 className="font-semibold mb-3">Sync calendars</h4>
               <div className="flex gap-3">
