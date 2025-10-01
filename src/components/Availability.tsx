@@ -3,11 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon, CalendarSync, Loader2 } from "lucide-react";
-import { format } from "date-fns";
-import { cn } from "@/lib/utils";
+import { DateRangePicker } from "@/components/ui/date-range-picker";
+import { CalendarSync, Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
 import { useToast } from "@/hooks/use-toast";
 
@@ -166,7 +163,7 @@ const Availability = () => {
   //   await supabase.from("blocked_dates").delete().neq("date", "");
   //   setBlockedDates([]);
   // };
-
+console.log(checkIn)
   const handleRequestToBook = async () => {
     setLoading(true);
     if (!user) {
@@ -363,28 +360,14 @@ const Availability = () => {
               </div>
             </Card>  */}
 
-            {/* Date pickers */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              {[
-                { label: "Check-in", value: checkIn, setValue: setCheckIn },
-                { label: "Check-out", value: checkOut, setValue: setCheckOut },
-              ].map(({ label, value, setValue }) => (
-                <div key={label}>
-                  <label className="block text-sm font-medium mb-2">{label}</label>
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <Button variant="outline" className={cn("w-full justify-start", !value && "text-muted-foreground")}>
-                        <CalendarIcon className="mr-2 h-4 w-4" />
-                        {value ? format(value, "MM/dd/yyyy") : "mm/dd/yyyy"}
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar mode="single" selected={value} onSelect={setValue} disabled={isDateBlocked} />
-                    </PopoverContent>
-                  </Popover>
-                </div>
-              ))}
-            </div>
+            <DateRangePicker
+              checkIn={checkIn}
+              checkOut={checkOut}
+              onCheckInChange={setCheckIn}
+              onCheckOutChange={setCheckOut}
+              disabledDates={blockedDates}
+              className="mb-6"
+            />
 
             <Input
               type="number"

@@ -172,12 +172,12 @@ const Contact = () => {
           </Card>
 
           {/* Backend Notice */}
-          <Card className="p-6 mt-8 bg-warning/10 border-warning/20">
+          {/* <Card className="p-6 mt-8 bg-warning/10 border-warning/20">
             <h4 className="font-semibold mb-2 text-warning-foreground">🚧 Form Processing Needs Backend</h4>
             <p className="text-sm text-muted-foreground">
               To process contact forms and send emails, connect to Supabase for backend functionality.
             </p>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </section>

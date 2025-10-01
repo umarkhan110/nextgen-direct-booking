@@ -68,14 +68,14 @@ const PhotoGallery = () => {
                 Explore every corner of your mountain retreat
               </p>
             </div>
-            <div className="hidden md:flex items-center space-x-4">
+            {/* <div className="hidden md:flex items-center space-x-4">
               <button className="px-4 py-2 bg-muted rounded-lg text-sm hover:bg-muted/80 transition-colors">
                 Upload Images
               </button>
               <button className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm hover:bg-primary/90 transition-colors">
                 Go to Hero
               </button>
-            </div>
+            </div> */}
           </div>
 
           {/* Photo Grid */}
@@ -105,7 +105,7 @@ const PhotoGallery = () => {
           </div>
 
           {/* Upload Section for Admin */}
-          <div className="mt-12 p-8 border-2 border-dashed border-border rounded-xl text-center bg-card/50">
+          {/* <div className="mt-12 p-8 border-2 border-dashed border-border rounded-xl text-center bg-card/50">
             <div className="max-w-md mx-auto">
               <h3 className="text-lg font-semibold mb-2">Add Images</h3>
               <p className="text-muted-foreground mb-6">
@@ -139,7 +139,7 @@ const PhotoGallery = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
